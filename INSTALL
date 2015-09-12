@@ -1,9 +1,5 @@
-Building OctoCoin
+Building Bitcoin
 
-See doc/readme-qt.rst for instructions on building OctoCoin-Qt,
-the intended-for-end-users, nice-graphical-interface, reference
-implementation of OctoCoin.
-
-See doc/build-*.txt for instructions on building octocoind,
+See doc/build-*.md for instructions on building bitcoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of OctoCoin.
+implementation of Bitcoin.
