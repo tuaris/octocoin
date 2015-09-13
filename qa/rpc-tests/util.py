@@ -58,7 +58,7 @@ def sync_mempools(rpc_connections):
             break
         time.sleep(1)
 
-bitcoind_processes = {}
+octocoind_processes = {}
 
 def initialize_datadir(dirname, n):
     datadir = os.path.join(dirname, "node"+str(n))
@@ -87,7 +87,7 @@ def initialize_chain(test_dir):
             args = [ os.getenv("BITCOIND", "octocoind"), "-keypool=1", "-datadir="+datadir, "-discover=0" ]
             if i > 0:
                 args.append("-connect=127.0.0.1:"+str(p2p_port(0)))
-            bitcoind_processes[i] = subprocess.Popen(args)
+            octocoind_processes[i] = subprocess.Popen(args)
             subprocess.check_call([ os.getenv("BITCOINCLI", "bitcoin-cli"), "-datadir="+datadir,
                                     "-rpcwait", "getblockcount"], stdout=devnull)
         devnull.close()
@@ -165,7 +165,7 @@ def start_node(i, dirname, extra_args=None, rpchost=None):
     datadir = os.path.join(dirname, "node"+str(i))
     args = [ os.getenv("BITCOIND", "octocoind"), "-datadir="+datadir, "-keypool=1", "-discover=0", "-rest" ]
     if extra_args is not None: args.extend(extra_args)
-    bitcoind_processes[i] = subprocess.Popen(args)
+    octocoind_processes[i] = subprocess.Popen(args)
     devnull = open("/dev/null", "w+")
     subprocess.check_call([ os.getenv("BITCOINCLI", "bitcoin-cli"), "-datadir="+datadir] +
                           _rpchost_to_args(rpchost)  +
@@ -188,8 +188,8 @@ def log_filename(dirname, n_node, logname):
 
 def stop_node(node, i):
     node.stop()
-    bitcoind_processes[i].wait()
-    del bitcoind_processes[i]
+    octocoind_processes[i].wait()
+    del octocoind_processes[i]
 
 def stop_nodes(nodes):
     for node in nodes:
@@ -202,9 +202,9 @@ def set_node_times(nodes, t):
 
 def wait_bitcoinds():
     # Wait for all bitcoinds to cleanly exit
-    for octocoind in bitcoind_processes.values():
+    for octocoind in octocoind_processes.values():
         octocoind.wait()
-    bitcoind_processes.clear()
+    octocoind_processes.clear()
 
 def connect_nodes(from_connection, node_num):
     ip_port = "127.0.0.1:"+str(p2p_port(node_num))

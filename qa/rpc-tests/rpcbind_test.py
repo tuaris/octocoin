@@ -33,7 +33,7 @@ def run_bind_test(tmpdir, allow_ips, connect_to, addresses, expected):
     binds = ['-rpcbind='+addr for addr in addresses]
     nodes = start_nodes(1, tmpdir, [base_args + binds], connect_to)
     try:
-        pid = bitcoind_processes[0].pid
+        pid = octocoind_processes[0].pid
         assert_equal(set(get_bind_addrs(pid)), set(expected))
     finally:
         stop_nodes(nodes)

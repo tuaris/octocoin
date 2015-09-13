@@ -44,7 +44,7 @@ def check_array_result(object_array, to_match, expected):
 def run_test(nodes, tmpdir):
     # Encrypt wallet and wait to terminate
     nodes[0].encryptwallet('test')
-    bitcoind_processes[0].wait()
+    octocoind_processes[0].wait()
     # Restart node 0
     nodes[0] = start_node(0, tmpdir)
     # Keep creating keys
