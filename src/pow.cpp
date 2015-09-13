@@ -14,8 +14,7 @@
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
 	//	Octocoin v2 Diff (fNewDifficultyProtocol): Patch effective @ block 75888
-    int nHeight = pindexLast->nHeight + 1;
-    bool fNewDifficultyProtocol = (nHeight >= Params().DiffChangeTarget());
+    bool fNewDifficultyProtocol = ((pindexLast->nHeight + 1) >= Params().DiffChangeTarget());
 
     if (fNewDifficultyProtocol) {
 		return GetNextWorkRequired_V2(pindexLast, pblock); 
@@ -113,7 +112,7 @@ unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockH
     int64_t retargetInterval = Params().Interval();
 
 	// Additional averaging over 4x nInterval window
-    if(nHeight > (4 * retargetInterval)) {
+    if((pindexLast->nHeight + 1) > (4 * retargetInterval)) {
        retargetInterval  *= 4;
 	   
 	  const CBlockIndex* pindexFirst = pindexLast;
