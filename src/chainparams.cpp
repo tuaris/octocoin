@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2009-2014 The Octocoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -275,7 +275,7 @@ public:
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // Litecoin: v2 enforced using Bitcoin's supermajority rule
+        // Octocoin: v2 enforced using Octocoin's supermajority rule
         nEnforceV2AfterHeight = -1;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const 
@@ -303,7 +303,7 @@ public:
         fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
 
-        // Litecoin: v2 enforced using Bitcoin's supermajority rule
+        // Octocoin: v2 enforced using Octocoin's supermajority rule
         nEnforceV2AfterHeight = -1;
     }
 

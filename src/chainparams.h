@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2009-2014 The Octocoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,7 +23,7 @@ struct CDNSSeedData {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * Bitcoin system. There are three: the main network on which people trade goods
+ * Octocoin system. There are three: the main network on which people trade goods
  * and services, the public test network which gets reset from time to time and
  * a regression test mode which is intended for private networks only. It has
  * minimal difficulty to ensure that blocks can be found instantly.
@@ -84,7 +84,7 @@ public:
     const std::vector<CAddress>& FixedSeeds() const { return vFixedSeeds; }
     virtual const Checkpoints::CCheckpointData& Checkpoints() const = 0;
 
-    // Litecoin: Height to enforce v2 block
+    // Octocoin: Height to enforce v2 block
     int EnforceV2AfterHeight() const { return nEnforceV2AfterHeight; }
 protected:
     CChainParams() {}
@@ -119,7 +119,7 @@ protected:
     bool fSkipProofOfWorkCheck;
     bool fTestnetToBeDeprecatedFieldRPC;
 
-    // Litecoin: Height to enforce v2 blocks
+    // Octocoin: Height to enforce v2 blocks
     int nEnforceV2AfterHeight;
 };
 

@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2009-2014 The Octocoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -93,7 +93,7 @@ unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockH
         return pindexLast->nBits;
     }
 
-    // Litecoin: This fixes an issue where a 51% attack can change difficulty at will.
+    // Octocoin: This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
     int blockstogoback = Params().Interval()-1;
     if ((pindexLast->nHeight+1) != Params().Interval())
@@ -143,7 +143,7 @@ unsigned int GetNextWorkRequired_V1(const CBlockIndex* pindexLast, const CBlockH
     uint256 bnOld;
     bnNew.SetCompact(pindexLast->nBits);
     bnOld = bnNew;
-    // Litecoin: intermediate uint256 can overflow by 1 bit
+    // Octocoin: intermediate uint256 can overflow by 1 bit
     bool fShift = bnNew.bits() > 235;
     if (fShift)
         bnNew >>= 1;
@@ -228,7 +228,7 @@ unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const CBlockH
     uint256 bnOld;
     bnNew.SetCompact(pindexLast->nBits);
     bnOld = bnNew;
-    // Litecoin: intermediate uint256 can overflow by 1 bit
+    // Octocoin: intermediate uint256 can overflow by 1 bit
     bool fShift = bnNew.bits() > 235;
     if (fShift)
         bnNew >>= 1;
