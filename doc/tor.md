@@ -42,11 +42,11 @@ reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equiv
 config file):
 
 	HiddenServiceDir /var/lib/tor/octocoin-service/
-	HiddenServicePort 9333 127.0.0.1:9333
-	HiddenServicePort 19333 127.0.0.1:19333
+	HiddenServicePort 22889 127.0.0.1:22889
+	HiddenServicePort 32889 127.0.0.1:32889
 
 The directory can be different of course, but (both) port numbers should be equal to
-your octocoind's P2P listen port (9333 by default).
+your octocoind's P2P listen port (22889 by default).
 
 	-externalip=X   You can tell octocoin about its publicly reachable address using
 	                this option, and this can be a .onion address. Given the above
@@ -76,7 +76,7 @@ specify:
 
 	./octocoind ... -discover
 
-and open port 9333 on your firewall (or use -upnp).
+and open port 22889 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
