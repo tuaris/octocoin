@@ -7,6 +7,6 @@ Comment[tr]=Octocoin, eşten eşe kriptografik sanal para birimi
 Exec=octocoin-qt %u
 Terminal=false
 Type=Application
-Icon=bitcoin128
+Icon=octocoin
 MimeType=x-scheme-handler/octocoin;
 Categories=Office;Finance;
