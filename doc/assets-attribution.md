@@ -99,5 +99,5 @@ Jonas Schnelli
 ### Assets Used
 	src/qt/res/icons/octocoin.icns, src/qt/res/src/octocoin.svg,
 	src/qt/res/src/octocoin.ico, src/qt/res/src/octocoin.png,
-	src/qt/res/src/bitcoin_testnet.png, docs/bitcoin_logo_doxygen.png,
+	src/qt/res/src/octocoin_testnet.png, docs/bitcoin_logo_doxygen.png,
 	src/qt/res/images/splash.png, src/qt/res/images/splash_testnet.png
