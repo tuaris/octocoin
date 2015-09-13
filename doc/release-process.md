@@ -24,7 +24,7 @@ Release Process
 
 ###perform gitian builds
 
- From a directory containing the octocoin source, gitian-builder and gitian.sigs.ltc
+ From a directory containing the octocoin source, gitian-builder and gitian.sigs.888
   
 	export SIGNER=(your gitian key, ie wtogami, coblee, etc)
 	export VERSION=(new version, e.g. 0.8.0)
@@ -56,13 +56,13 @@ Release Process
 ###Build Octocoin Core for Linux, Windows, and OS X:
   
 	./bin/gbuild --commit octocoin=v${VERSION} ../octocoin/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../octocoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.888/ ../octocoin/contrib/gitian-descriptors/gitian-linux.yml
 	mv build/out/octocoin-*.tar.gz build/out/src/octocoin-*.tar.gz ../
 	./bin/gbuild --commit octocoin=v${VERSION} ../octocoin/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win --destination ../gitian.sigs.ltc/ ../octocoin/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win --destination ../gitian.sigs.888/ ../octocoin/contrib/gitian-descriptors/gitian-win.yml
 	mv build/out/octocoin-*.zip build/out/octocoin-*.exe ../
 	./bin/gbuild --commit octocoin=v${VERSION} ../octocoin/contrib/gitian-descriptors/gitian-osx.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../octocoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.888/ ../octocoin/contrib/gitian-descriptors/gitian-osx.yml
 	mv build/out/octocoin-*-unsigned.tar.gz inputs/octocoin-osx-unsigned.tar.gz
 	mv build/out/octocoin-*.tar.gz build/out/octocoin-*.dmg ../
 	popd
