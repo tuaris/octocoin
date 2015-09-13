@@ -169,8 +169,8 @@ Value validateaddress(const Array& params, bool fHelp)
             "  \"account\" : \"account\"         (string) The account associated with the address, \"\" is the default account\n"
             "}\n"
             "\nExamples:\n"
-            + HelpExampleCli("validateaddress", "\"Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2\"")
-            + HelpExampleRpc("validateaddress", "\"Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2\"")
+            + HelpExampleCli("validateaddress", "\"8T4o9PzBXbp17KRjVQpY4VktbVAZRvDGuw\"")
+            + HelpExampleRpc("validateaddress", "\"8T4o9PzBXbp17KRjVQpY4VktbVAZRvDGuw\"")
         );
 
     CBitcoinAddress address(params[0].get_str());
@@ -286,9 +286,9 @@ Value createmultisig(const Array& params, bool fHelp)
 
             "\nExamples:\n"
             "\nCreate a multisig address from 2 addresses\n"
-            + HelpExampleCli("createmultisig", "2 \"[\\\"Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2\\\",\\\"LbhhnRHHVfP1eUJp1tDNiyeeVsNhFN9Fcw\\\"]\"") +
+            + HelpExampleCli("createmultisig", "2 \"[\\\"8T4o9PzBXbp17KRjVQpY4VktbVAZRvDGuw\\\",\\\"8JMTnNnFhGKkRh8JXeNjRowmuAq3vnTyFg\\\"]\"") +
             "\nAs a json rpc call\n"
-            + HelpExampleRpc("createmultisig", "2, \"[\\\"Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2\\\",\\\"LbhhnRHHVfP1eUJp1tDNiyeeVsNhFN9Fcw\\\"]\"")
+            + HelpExampleRpc("createmultisig", "2, \"[\\\"8T4o9PzBXbp17KRjVQpY4VktbVAZRvDGuw\\\",\\\"8JMTnNnFhGKkRh8JXeNjRowmuAq3vnTyFg\\\"]\"")
         ;
         throw runtime_error(msg);
     }
@@ -321,11 +321,11 @@ Value verifymessage(const Array& params, bool fHelp)
             "\nUnlock the wallet for 30 seconds\n"
             + HelpExampleCli("walletpassphrase", "\"mypassphrase\" 30") +
             "\nCreate the signature\n"
-            + HelpExampleCli("signmessage", "\"Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2\" \"my message\"") +
+            + HelpExampleCli("signmessage", "\"8T4o9PzBXbp17KRjVQpY4VktbVAZRvDGuw\" \"my message\"") +
             "\nVerify the signature\n"
-            + HelpExampleCli("verifymessage", "\"Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2\" \"signature\" \"my message\"") +
+            + HelpExampleCli("verifymessage", "\"8T4o9PzBXbp17KRjVQpY4VktbVAZRvDGuw\" \"signature\" \"my message\"") +
             "\nAs json rpc\n"
-            + HelpExampleRpc("verifymessage", "\"Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2\", \"signature\", \"my message\"")
+            + HelpExampleRpc("verifymessage", "\"8T4o9PzBXbp17KRjVQpY4VktbVAZRvDGuw\", \"signature\", \"my message\"")
         );
 
     string strAddress  = params[0].get_str();
