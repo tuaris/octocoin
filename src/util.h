@@ -229,4 +229,12 @@ template <typename Callable> void TraceThread(const char* name,  Callable func)
     }
 }
 
+/**
+ * .. Octocoin: Converts HEX to LONG used only in GetBlockValue() in main.cpp
+ */
+long hex2long(const char* hexString);
+/**
+ * .. Octocoin
+ */
+ 
 #endif // BITCOIN_UTIL_H

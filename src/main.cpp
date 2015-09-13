@@ -1835,7 +1835,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         prevHash = pindex->pprev->GetBlockHash();
     }
 
-    if (block.vtx[0].GetValueOut() > prevHashprevHashprevHash(pindex->nHeight, nFees, prevHash))
+    if (block.vtx[0].GetValueOut() > GetBlockValue(pindex->nHeight, nFees, prevHash))
         return state.DoS(100,
                          error("ConnectBlock() : coinbase pays too much (actual=%d vs limit=%d)",
                                block.vtx[0].GetValueOut(), GetBlockValue(pindex->nHeight, nFees, prevHash)),
